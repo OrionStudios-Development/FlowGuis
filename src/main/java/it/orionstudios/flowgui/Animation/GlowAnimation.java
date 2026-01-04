@@ -14,10 +14,11 @@ public class GlowAnimation implements Animation {
         glow = !glow;
 
         if (glow)
-            copy.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+            copy.addUnsafeEnchantment(Enchantment.UNBREAKING, 1);
         else
-            copy.removeEnchantment(Enchantment.DURABILITY);
+            copy.removeEnchantment(Enchantment.UNBREAKING);
 
         return copy;
     }
 }
+
