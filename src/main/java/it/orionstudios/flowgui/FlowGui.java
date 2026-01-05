@@ -159,6 +159,10 @@ public abstract class FlowGui {
         drawPage(page);
     }
 
+    private void applySlot(int slot, int page, GuiItem item) {
+        slot(slot,page,item);
+    }    
+
     protected void onOpen(Consumer<Player> action) {
         this.onOpen = action;
     }
