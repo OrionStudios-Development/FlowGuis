@@ -1,4 +1,0 @@
-name: FlowGui
-version: '0.0.1'
-main: it.orionstudios.flowgui.FlowGui
-api-version: '1.21'
