@@ -68,15 +68,11 @@ public class ShopGui extends FlowGui {
 ```
 
 ## How i open the GUI?
-In the main file you import the GUI File and call like this in the onEnable Method
+When you has created the GUI, you create a Command too and the command has to have in it this:
 ``` java
-import org.example.example.guis.ShopGui;
 
-@Override
-    public void onEnable() {
-        instance = this;
-        new ShopGui(items).open(player);
-    }
+new ExampleGui(items).open(player, this);
+
 ```
 
 ## 📦 Installation
@@ -85,27 +81,30 @@ import org.example.example.guis.ShopGui;
 ```
 
 repositories {
-    maven { url 'https://jitpack.io' }
+    mavenCentral()
+	maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    implementation 'it.orionstudios:flowguis:1.0.0'
+    implementation 'com.github.OrionStudios-Development:FlowGuis:1.0.0'
 }
 
 ```
 
 ### Maven
 ``` xml
-<repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-</repository>
+<repositories>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+</repositories>
 
-<dependency>
-    <groupId>it.orionstudios</groupId>
-    <artifactId>flowguis</artifactId>
-    <version>1.0.0</version>
-</dependency>
+    <dependency>
+	    <groupId>com.github.OrionStudios-Development</groupId>
+	    <artifactId>FlowGuis</artifactId>
+	    <version>1.0.0</version>
+	</dependency>
 ``` 
 ## Need Help?
 ### Join our Discord Server!
