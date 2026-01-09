@@ -159,7 +159,7 @@ public abstract class FlowGui {
         drawPage(page);
     }
 
-    private void applySlot(int slot, int page, GuiItem item) {
+    public void applySlot(int slot, int page, GuiItem item) {
         slot(slot,page,item);
     }    
 
