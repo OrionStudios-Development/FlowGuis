@@ -23,9 +23,10 @@ public final class SlotBatch {
         return this;
     }
 
-    void apply(FlowGui gui) {
+    public void apply(FlowGui gui) {
         for (int slot : slots) {
             gui.applySlot(slot, page, item);
         }
     }
 }
+
