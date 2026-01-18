@@ -6,7 +6,7 @@
 
     <groupId>it.orionstudios</groupId>
     <artifactId>FlowGui</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.8</version>
     <packaging>jar</packaging>
 
     <name>FlowGui</name>
