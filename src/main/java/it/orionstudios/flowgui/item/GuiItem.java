@@ -1,6 +1,5 @@
 package it.orionstudios.flowgui.item;
 
-import it.orionstudios.flowgui.animation.Animation;
 import it.orionstudios.flowgui.context.GuiContext;
 import it.orionstudios.flowgui.utils.EnchantUtils;
 import org.bukkit.Bukkit;
@@ -21,7 +20,6 @@ public class GuiItem {
 
     private final ItemStack item;
     private Consumer<GuiContext> click;
-    private Animation animation;
     private long tick = 0;
     private Predicate<Player> showCondition = p -> true;
     private Predicate<Player> disableCondition = p -> false;
@@ -147,13 +145,6 @@ public class GuiItem {
         return this;
     }
 
-    /* ===== ANIMATION ===== */
-
-    public GuiItem animation(Animation animation) {
-        this.animation = animation;
-        return this;
-    }
-
     /* ===== CLICK ===== */
 
     public GuiItem onClick(Consumer<GuiContext> click) {
@@ -164,7 +155,6 @@ public class GuiItem {
     /* ===== INTERNAL ===== */
 
     public ItemStack render(Player player) {
-        if (animation == null) return item;
         ItemStack base = item.clone();
 
         if (activeState != null && states.containsKey(activeState)) {
@@ -172,7 +162,7 @@ public class GuiItem {
         }
 
         tick++;
-        return animation == null ? base : animation.apply(base, tick);
+        return base;
     }
     public boolean shouldShow(Player p) {
         return showCondition.test(p);
